@@ -1,14 +1,136 @@
-# List of Experiments
+# ANDROID PROGRAMMING LAB MANUAL (CSIT-606)
 
-| NO. | Experiment Name | Files |
-| -- | ------------------------- | ----- |
-| 1.| Implement an android application that demonstrates the use of scroll view for text with HTML formatting. | [Class File](Exp1/app/src/main/java/com/storm/exp1/ScrollView.java), [Activity XML](Exp1/app/src/main/res/layout/activity_scrollview.xml)|
-| 2.| Develop an application that uses GUI components, Font and Colors. | [Class File](Exp2/app/src/main/java/com/storm/exp2/GuiComponents.java), [Activity XML](Exp2/app/src/main/res/layout/activity_gui_components.xml)|
-| 3.| Develop an application that uses Layout Managers and event listeners. | [Class File](Exp3/app/src/main/java/com/storm/exp3/LayoutManagers.java), [Activity XML](Exp3/app/src/main/res/layout/activity_layout_managers.xml)|
-| 4.| Write an application that draws basic graphical primitives on the screen. | [Class File](Exp4/app/src/main/java/com/storm/exp4/Graphics.java)|
-| 5.| Develop an application that makes use of database. | [Class File](Exp5/app/src/main/java/com/storm/exp5/Database.java), [Activity XML](Exp5/app/src/main/res/layout/activity_database.xml)|
-| 6.| Develop an application that makes use of RSS Feed. | [Class File](Exp6/app/src/main/java/com/storm/exp6/RSSFeed.java), [Activity XML](Exp6/app/src/main/res/layout/activity_rss_feed.xml)|
-| 7.| Develop a native application that uses GPS location information. | [Class File](Exp7/app/src/main/java/com/storm/exp7/GPS.java), [Activity XML](Exp7/app/src/main/res/layout/activity_gps.xml)|
-| 8.| Implement an application that creates an alert upon receiving a message. | [Class File](Exp8/app/src/main/java/com/storm/exp8/Alert.java), [Activity XML](Exp8/app/src/main/res/layout/activity_alert.xml)|
-| 9.| Implement an application that implements Multi threading. | [Class File](Exp9/app/src/main/java/com/storm/exp9/Threading.java), [Activity XML](Exp9/app/src/main/res/layout/activity_threading.xml)|
-| 10.| Implement an application that writes data to the SD card. | [Class File](Exp10/app/src/main/java/com/storm/exp10/SDCard.java), [Activity XML](Exp10/app/src/main/res/layout/activity_sdcard.xml)|
+## Computer Science & Information Technology – VI Semester
+
+---
+
+## 1. INTRODUCTION
+
+This laboratory manual is designed in accordance with the **CSIT-606 Android Programming syllabus** under the AICTE Flexible Curricula. The experiments are rewritten to ensure **full compatibility with the current Android SDK (API 30 and above)** while preserving the **original course objectives and learning outcomes**.
+
+Due to evolving Android security policies and platform changes, certain legacy APIs and practices are no longer supported. Therefore, students are required to implement experiments using **modern, recommended Android development practices**.
+
+> **Note:** Students must use the latest Android Studio and SDK versions available at the time of implementation.
+
+---
+
+## 2. COURSE OBJECTIVES
+
+* To install and configure Android application development tools
+* To design and develop user interfaces for Android applications
+* To understand activity lifecycle and intents
+* To implement local data storage and background tasks
+* To use device services such as notifications and location safely
+
+---
+
+## 3. SOFTWARE REQUIREMENTS
+
+* Android Studio (Latest Stable Version)
+* Android SDK (API Level 30 or above)
+* Java / Kotlin
+* Android Emulator or Physical Device
+* Internet Connectivity (for networking experiments)
+
+---
+
+## 4. LIST OF EXPERIMENTS
+
+### BASIC LEVEL EXPERIMENTS
+
+### **Experiment 1: Android Studio Setup and Hello World Application**
+
+  Install Android Studio, configure SDK and Emulator, and develop a basic Android application displaying a welcome message.
+
+### **Experiment 2: Activity Lifecycle Demonstration**
+
+  Develop an application that logs and displays activity lifecycle events during orientation changes and background transitions.
+
+### **Experiment 3: ScrollView with Styled Text**
+
+  Implement an application that displays long formatted text using ScrollView and HTML/Spannable formatting.
+
+### **Experiment 4: UI Components with Themes, Fonts, and Colors**
+
+  Design a user interface using TextView, Button, and EditText with Material themes and styles.
+
+### **Experiment 5: Responsive Layout Design using ConstraintLayout**
+
+  Create responsive UI layouts using ConstraintLayout and demonstrate screen adaptability.
+
+---
+
+### INTERMEDIATE LEVEL EXPERIMENTS
+
+### **Experiment 6: Event Handling and Intents**
+
+  Implement explicit and implicit intents to navigate between activities and launch system applications.
+
+### **Experiment 7: Dynamic List Application using RecyclerView**
+
+  Develop an application displaying a list of items using RecyclerView and custom adapters.
+
+### **Experiment 8: Local Database Application using Room**
+
+  Implement CRUD operations using Room persistence library for structured data storage.
+
+### **Experiment 9: Background Task Execution using WorkManager**
+
+  Develop an application that performs background tasks such as delayed notifications using WorkManager.
+
+### **Experiment 10: File Handling using App-Specific Storage / SAF**
+
+  Read and write files using internal storage or Storage Access Framework with proper permissions.
+
+---
+
+### ADVANCED LEVEL / CASE STUDY EXPERIMENTS
+
+### **Experiment 11: Network Data Fetch using HTTPS**
+
+  Fetch and display remote data (RSS / JSON / XML) using HTTPS connections.
+
+### **Experiment 12: Notification System using Notification Channels**
+
+  Develop an application that generates notifications using notification channels.
+
+### **Experiment 13: Location-Based Application with Runtime Permissions**
+
+  Implement foreground location access with proper runtime permission handling.
+
+### **Experiment 14: Broadcast Receiver for System Events**
+
+  Handle permitted system broadcast events such as battery status or connectivity changes.
+
+### **Experiment 15: Mini Project – Context-Aware Android Application**
+
+  Design and develop a mini project integrating UI, local storage, background processing, and system services.
+
+---
+
+## 5. GENERAL INSTRUCTIONS
+
+* All experiments must be executed using the latest Android SDK
+* Deprecated APIs must not be used
+* Proper permission handling is mandatory
+* Code should follow Android best practices
+* Each experiment must include source code, screenshots, and output
+
+---
+
+## 6. EVALUATION SCHEME
+
+* Continuous Lab Assessment
+* Program Execution and Output
+* Viva-Voce
+* Mini Project Evaluation
+
+---
+
+## 7. CONCLUSION
+
+This lab manual emphasizes **conceptual clarity, modern Android development practices, and industry relevance**. The experiments are structured to help students build reliable, secure, and scalable Android applications aligned with current platform standards.
+
+---
+
+### Prepared as per RGPV syllabus with updated Android SDK compliance
