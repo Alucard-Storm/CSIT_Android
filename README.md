@@ -42,43 +42,40 @@ Due to evolving Android security policies and platform changes, certain legacy A
 
   Install Android Studio, configure SDK and Emulator, and develop a basic Android application displaying a welcome message.
 
-### **Experiment 2: Activity Lifecycle Demonstration**
+### **[Experiment 2: Activity Lifecycle Demonstration](Experiment_2/README.md)**
 
   Develop an application that logs and displays activity lifecycle events during orientation changes and background transitions.
 
-### **Experiment 3: ScrollView with Styled Text**
+### **[Experiment 3: ScrollView with Styled Text](Experiment_3/README.md)**
 
   Implement an application that displays long formatted text using ScrollView and HTML/Spannable formatting.
 
-### **Experiment 4: UI Components with Themes, Fonts, and Colors**
+### **[Experiment 4: UI Components with Themes, Fonts, and Colors](Experiment_4/README.md)**
 
   Design a user interface using TextView, Button, and EditText with Material themes and styles.
 
-### **Experiment 5: Responsive Layout Design using ConstraintLayout**
-
+### **[Experiment 5: Responsive Layout Design using ConstraintLayout](Experiment_5/README.md)**
   Create responsive UI layouts using ConstraintLayout and demonstrate screen adaptability.
 
 ---
 
 ### INTERMEDIATE LEVEL EXPERIMENTS
 
-### **Experiment 6: Event Handling and Intents**
+### **[Experiment 6: Event Handling and Intents](Experiment_6/README.md)**
 
   Implement explicit and implicit intents to navigate between activities and launch system applications.
 
-### **Experiment 7: Dynamic List Application using RecyclerView**
-
+### **[Experiment 7: Dynamic List Application using RecyclerView](Experiment_7/README.md)**
   Develop an application displaying a list of items using RecyclerView and custom adapters.
 
-### **Experiment 8: Local Database Application using Room**
+### **[Experiment 8: Local Database Application using Room](Experiment_8/README.md)**
 
   Implement CRUD operations using Room persistence library for structured data storage.
 
-### **Experiment 9: Background Task Execution using WorkManager**
-
+### **[Experiment 9: Background Task Execution using WorkManager](Experiment_9/README.md)**
   Develop an application that performs background tasks such as delayed notifications using WorkManager.
 
-### **Experiment 10: File Handling using App-Specific Storage / SAF**
+### **[Experiment 10: File Handling using App-Specific Storage / SAF](Experiment_10/README.md)**
 
   Read and write files using internal storage or Storage Access Framework with proper permissions.
 
@@ -86,25 +83,7 @@ Due to evolving Android security policies and platform changes, certain legacy A
 
 ### ADVANCED LEVEL / CASE STUDY EXPERIMENTS
 
-### **Experiment 11: Network Data Fetch using HTTPS**
-
-  Fetch and display remote data (RSS / JSON / XML) using HTTPS connections.
-
-### **Experiment 12: Notification System using Notification Channels**
-
-  Develop an application that generates notifications using notification channels.
-
-### **Experiment 13: Location-Based Application with Runtime Permissions**
-
-  Implement foreground location access with proper runtime permission handling.
-
-### **Experiment 14: Broadcast Receiver for System Events**
-
-  Handle permitted system broadcast events such as battery status or connectivity changes.
-
-### **Experiment 15: Mini Project – Context-Aware Android Application**
-
-  Design and develop a mini project integrating UI, local storage, background processing, and system services.
+> TODO
 
 ---
 
