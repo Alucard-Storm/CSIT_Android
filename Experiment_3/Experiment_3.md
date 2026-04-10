@@ -119,8 +119,7 @@ ss.setSpan(new StyleSpan(Typeface.BOLD), 6, 11, Spannable.SPAN_EXCLUSIVE_EXCLUSI
             android:id="@+id/tvClickable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:movementMethod="android.text.method.LinkMovementMethod"/>
+            android:textSize="15sp"/>
 
     </LinearLayout>
 </ScrollView>
