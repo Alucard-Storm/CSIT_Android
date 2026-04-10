@@ -190,7 +190,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.tvBranch.setText(student.getBranch());
 
         holder.btnDelete.setOnClickListener(v -> {
-            int pos = holder.getAdapterPosition();
+            int pos = holder.getBindingAdapterPosition();
+            if (pos == RecyclerView.NO_POSITION) return;
             students.remove(pos);
             notifyItemRemoved(pos);
             notifyItemRangeChanged(pos, students.size());
