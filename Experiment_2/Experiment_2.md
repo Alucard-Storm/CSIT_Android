@@ -189,7 +189,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override protected void onDestroy() {
         super.onDestroy();
-        logEvent("onDestroy", "Activity destroyed");
+        // Only log to Logcat — views may be invalid after onDestroy
+        Log.d(TAG, "→ onDestroy()  [Activity destroyed]\n");
     }
 
     @Override
