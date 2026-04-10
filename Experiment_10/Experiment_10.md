@@ -233,12 +233,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readFromUri(Uri uri) {
-        try (InputStream is = getContentResolver().openInputStream(uri);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+        try {
+            InputStream is = getContentResolver().openInputStream(uri);
+            if (is == null) {
+                showOutput("SAF read error: Cannot open file");
+                return;
+            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             StringBuilder sb = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) sb.append(line).append("\n");
             showOutput("Read via SAF:\n\n" + sb.toString());
+            reader.close();
+            is.close();
         } catch (IOException e) {
             showOutput("SAF read error: " + e.getMessage());
         }
