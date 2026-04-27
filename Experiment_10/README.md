@@ -21,25 +21,77 @@ Students will be able to manage files securely within the Android environment.
 
 ## Code
 
-### `MainActivity.java` (Internal Storage)
+### `MainActivity.java`
 
 ```java
-String filename = "myfile";
-String fileContents = "Hello world!";
-try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
-    fos.write(fileContents.getBytes());
-} catch (Exception e) {
-    e.printStackTrace();
+package com.csit.experiment_10;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.FileOutputStream;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final int WRITE_REQUEST_CODE = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button btnWriteInternal = findViewById(R.id.btnWriteInternal);
+        Button btnSAF = findViewById(R.id.btnSAF);
+
+        btnWriteInternal.setOnClickListener(v -> writeToInternalStorage());
+        btnSAF.setOnClickListener(v -> createFileWithSAF());
+    }
+
+    private void writeToInternalStorage() {
+        String filename = "myfile";
+        String fileContents = "Hello world!";
+        try (FileOutputStream fos = openFileOutput(filename, MODE_PRIVATE)) {
+            fos.write(fileContents.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createFileWithSAF() {
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TITLE, "myfile.txt");
+        startActivityForResult(intent, WRITE_REQUEST_CODE);
+    }
 }
 ```
 
-### `MainActivity.java` (SAF - Create File)
+### `activity_main.xml`
 
-```java
-// Logic to create a file using SAF
-Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-intent.addCategory(Intent.CATEGORY_OPENABLE);
-intent.setType("text/plain");
-intent.putExtra(Intent.EXTRA_TITLE, "myfile.txt");
-startActivityForResult(intent, WRITE_REQUEST_CODE);
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <Button
+        android:id="@+id/btnWriteInternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write to Internal Storage"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnSAF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create File with SAF" />
+
+</LinearLayout>
 ```
