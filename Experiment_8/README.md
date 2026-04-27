@@ -25,6 +25,12 @@ Students will be able to create, read, update, and delete data in a local databa
 ### `User.java` (Entity)
 
 ```java
+package com.csit.experiment_8;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 @Entity
 public class User {
     @PrimaryKey
@@ -41,6 +47,15 @@ public class User {
 ### `UserDao.java` (DAO)
 
 ```java
+package com.csit.experiment_8;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+
+import java.util.List;
+
 @Dao
 public interface UserDao {
     @Query("SELECT * FROM user")
@@ -51,5 +66,62 @@ public interface UserDao {
 
     @Delete
     void delete(User user);
+}
+```
+
+### `AppDatabase.java`
+
+```java
+package com.csit.experiment_8;
+
+import android.content.Context;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
+@Database(entities = {User.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+    public abstract UserDao userDao();
+
+    private static AppDatabase instance;
+
+    public static synchronized AppDatabase getInstance(Context context) {
+        if (instance == null) {
+            instance = Room.databaseBuilder(context.getApplicationContext(),
+                    AppDatabase.class, "app-database").build();
+        }
+        return instance;
+    }
+}
+```
+
+### `MainActivity.java`
+
+```java
+package com.csit.experiment_8;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        AppDatabase db = AppDatabase.getInstance(this);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        executor.execute(() -> {
+            User user = new User();
+            user.uid = 1;
+            user.firstName = "John";
+            user.lastName = "Doe";
+            db.userDao().insertAll(user);
+        });
+    }
 }
 ```
